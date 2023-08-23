@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" type="image/x-icon" href="favicon_32.ico">
+	<title>Code Documentation Project</title>
+</head>
+<body>
+	<nav id="navbar">
+		<header id="logo">
+			<h1>CSS Documentation</h1>
+		</header>
+		<ul>
+			<li><a href="#css_first_steps" class="nav-link">CSS first steps overview</a></li>
+			<li><a href="#what_is_css" class="nav-link">What is CSS?</a></li>
+			<li><a href="#getting_started" class="nav-link">Getting started with CSS</a></li>
+			<li><a href="#how_css_is_structured" class="nav-link">How CSS is structured</a></li>
+			<li><a href="#how_css_works" class="nav-link">How CSS works</a></li>
+			<li><a href="#css_building_blocks_overview" class="nav-link">CSS building blocks overview</a></li>
+			<li><a href="#css_selectors" class="nav-link">CSS selectors</a></li>
+			<li><a href="#the_box_model" class="nav-link">The box model</a></li>
+			<li><a href="#styling_text_overview" class="nav-link">Styling text overview</a></li>
+			<li><a href="#css_layout_overview" class="nav-link">CSS layout overview</a></li>
+			<li><a href="#beginners_guide_to_media_queries" class="nav-link">Beginner's guide to media queries</a></li>
+			<li><a href="#supporting_older_browsers" class="nav-link">Supporting older browsers</a></li>
+			<li><a href="#animations" class="nav-link">Animations</a></li>
+			<li><a href="#Reference" class="nav-link">Reference</a></li>
+		</ul>
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="css_first_steps">
+			<header>
+				CSS first steps overview
+			</header>
+			<p>CSS (Cascading Style Sheets) is used to style and lay out web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module provides a gentle beginning to your path towards CSS mastery with the basics of how it works, what the syntax looks like, and how you can start using it to add styling to HTML.</p>
+			<p>Before starting this module, you should have:</p>
+			<ul>
+				<li>Basic familiarity with using computers and using the Web passively (i.e. looking at it, consuming the content.)</li>
+				<li>A basic work environment set up, as detailed in Installing basic software, and an understanding of how to create and manage files, as detailed in Dealing with files.</li>
+				<li>Basic familiarity with HTML, as discussed in the Introduction to HTML module.</li>
+			</ul>
+		</section>
+		<section class="main-section" id="what_is_css">
+			<header>
+					What is CSS?
+			</header>
+			<p>
+				CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is with a simple syntax example and also covers some key terms about the language.
+			</p>
+			<p>
+				In the Introduction to HTML module, we covered what HTML is and how it is used to mark up documents. These documents will be readable in a web browser. Headings will look larger than regular text, paragraphs break onto a new line and have space between them. Links are colored and underlined to distinguish them from the rest of the text. What you are seeing are the browser's default styles — very basic styles — that the browser applies to HTML to make sure that the page will be basically readable even if no explicit styling is specified by the author of the page.
+			</p>
+			<code>
+				h1 {
+  					color: red;
+  					font-size: 5em;
+					}
+			</code>
+			<ul>
+				<li>
+					In the above example, the CSS rule opens with a selector. This selects the HTML element that we are going to style. In this case, we are styling level one headings (h1).
+				</li>
+				<li>
+					We then have a set of curly braces { }.
+				</li>
+				<li>
+					Inside the braces will be one or more declarations, which take the form of property and value pairs. We specify the property (color in the above example) before the colon, and we specify the value of the property after the colon (red in this example).
+
+				</li>
+			</ul>
+		</section>
+		<section class="main-section" id="getting_started">
+			<header>
+					Getting started with CSS
+			</header>
+			<p>
+				In this article, we will take a simple HTML document and apply CSS to it, learning some practical things about the language along the way.
+			</p>
+			<p>
+				OThe very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.
+			</p>
+			<p>
+				Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.
+			</p>
+			<p>
+				To link styles.css to index.html, add the following line somewhere inside the <head> of the HTML document:
+			</p>
+			<code>
+				<link rel="stylesheet" href="styles.css" />
+			</code>
+		</section>
+		<section class="main-section" id="how_css_is_structured">
+			<header>
+					How CSS is structured
+			</header>
+			<p>
+				A selector targets HTML to apply styles to content. We have already discovered a variety of selectors in the Getting started with CSS tutorial. If CSS is not applying to content as expected, your selector may not match the way you think it should match.
+			</p>
+			<code>
+				h1
+				a:link
+				.manythings
+				#onething
+				*
+				.box p
+				.box p:first-child
+				h1, h2, .intro
+			</code>
+			<p>
+				Try creating some CSS rules that use the selectors above. Add HTML to be styled by the selectors. If any of the syntax above is not familiar, try searching MDN.
+			</p>
+		</section>
+		<section class="main-section" id="how_css_works">
+			<header>
+					How CSS works
+			</header>
+			<p>
+				When a browser displays a document, it must combine the document's content with its style information. It processes the document in a number of stages, which we've listed below. Bear in mind that this is a very simplified version of what happens when a browser loads a webpage, and that different browsers will handle the process in different ways. But this is roughly what happens.
+			</p>
+			<ol>
+				<li>The browser loads the HTML (e.g. receives it from the network).</li>
+				<li>It converts the HTML into a DOM (Document Object Model). The DOM represents the document in the computer's memory. The DOM is explained in a bit more detail in the next section.</li>
+				<li>The browser then fetches most of the resources that are linked to by the HTML document, such as embedded images, videos, and even linked CSS! JavaScript is handled a bit later on in the process, and we won't talk about it here to keep things simpler.</li>
+				<li>The browser parses the fetched CSS, and sorts the different rules by their selector types into different "buckets", e.g. element, class, ID, and so on. Based on the selectors it finds, it works out which rules should be applied to which nodes in the DOM, and attaches style to them as required (this intermediate step is called a render tree).</li>
+				<li>The render tree is laid out in the structure it should appear in after the rules have been applied to it.</li>
+				<li>The visual display of the page is shown on the screen (this stage is called painting).</li>
+			</ol>
+		</section>
+		<section class="main-section" id="css_building_blocks_overview">
+			<header>
+					CSS building blocks overview
+			</header>
+			<p>
+				This module carries on where CSS first steps left off — now that you've gained familiarity with the language and its syntax, and got some basic experience using it, it's time to dive a bit deeper. This module looks at the cascade and inheritance, all the selector types we have available, units, sizing, styling backgrounds and borders, debugging, and lots more.
+			</p>
+			<p>
+				The aim here is to provide you with a toolkit for writing competent CSS and help you understand all the essential theory, before moving on to more specific disciplines like text styling and CSS layout.
+			</p>
+		</section>
+		<section class="main-section" id="css_selectors">
+			<header>
+					CSS selectors
+			</header>
+			<p>
+				In CSS, selectors are used to target the HTML elements on our web pages that we want to style. There are a wide variety of CSS selectors available, allowing for fine-grained precision when selecting elements to style. In this article and its sub-articles we'll run through the different types in great detail, seeing how they work.
+			</p>
+			<p>
+				A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.
+				<code>
+					h1 {
+					  color: blue;
+					}
+
+					.special {
+					  color: blue;
+					}
+				</code>
+			</p>
+			<p>
+				I could also combine these into a selector list, by adding a comma between them.
+				<code>
+					h1, .special {
+						  color: blue;
+						}
+				</code>
+			</p>
+		</section>
+		<section class="main-section" id="the_box_model">
+			<header>
+					The box model
+			</header>
+			<p>
+				Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items. In this lesson, we will take a look at the CSS Box Model. You'll get an understanding of how it works and the terminology that relates to it.
+			</p>
+			<p>
+				In CSS we have several types of boxes that generally fit into the categories of block boxes and inline boxes. The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.
+			</p>
+		</section>
+		<section class="main-section" id="styling_text_overview">
+			<header>
+					Styling text overview
+			</header>
+			<p>
+				The color property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property.
+				<code>
+					p {
+					  color: red;
+					}
+				</code>
+				This will cause the paragraphs to become red, rather than the standard browser default of black, like so:
+			</p>
+			<p>
+				To set a different font for your text, you use the font-family property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. A simple example looks like so:
+				<code>
+					p {
+					  font-family: Arial;
+					}
+				</code>	
+			</p>
+			<p>
+				Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This involves a font-family value consisting of multiple font names separated by commas, e.g.,
+				<code>
+					p {
+ 					 font-family: "Trebuchet MS", Verdana, sans-serif;
+					}
+				</code>
+			</p>
+		</section>
+		<section  class="main-section" id="css_layout_overview">
+			<header>
+				CSS layout overview
+			</header>
+			<p>
+				CSS page layout techniques allow us to take elements contained in a web page and control where they're positioned relative to the following factors: their default position in normal layout flow, the other elements around them, their parent container, and the main viewport/window. The page layout techniques we'll be covering in more detail in this module are:
+			</p>
+			<ul>
+				<li>Normal flow</li>
+				<li>The display property</li>
+				<li>Flexbox</li>
+				<li>Grid</li>
+				<li>Floats</li>
+				<li>Positioning</li>
+				<li>Table layout</li>
+				<li>Multiple-column layout</li>
+			</ul>
+			<p>
+				Each technique has its uses, advantages, and disadvantages. No technique is designed to be used in isolation. By understanding what each layout method is designed for you'll be in a good position to understand which method is most appropriate for each task.
+			</p>
+		</section>
+		<section class="main-section" id="beginners_guide_to_media_queries">
+			<header>
+					Beginner's guide to media queries
+			</header>
+			<p> 
+				Media queries allow you to apply CSS styles depending on a device's general type (such as print vs. screen) or other characteristics such as screen resolution or browser viewport width. Media queries are used for the following:
+			</p>
+			<ul>
+				<li>To conditionally apply styles with the CSS @media and @import at-rules.</li>
+				<li>To target specific media for the &ltstyle&gt, &ltlink&gt, &ltsource&gt, and other HTML</li>
+				<li>To test and monitor media states using the Window.matchMedia() and EventTarget.addEventListener() methods.</li>
+			</ul>
+		</section>
+		<section class="main-section" id="supporting_older_browsers">
+			<header>
+					Supporting older browsers
+			</header>
+			<p>
+				There will be visitors to your site who use older browsers, or browsers which may not support the features you have used. This will always be the case on the web — as new features are developed, different browsers will prioritize different things. This article explains how to use modern web techniques without locking out users of older technology.
+			</p>
+			<p>
+				You should also consider the type of devices and the way people use your site, for example, you may expect a higher than an average number of mobile devices. Accessibility and people using assistive technology should always be considered, but for some sites that may be even more critical. In my experience, developers are often very worried about the experience of 1% of users in an old version of Internet Explorer, while not considering at all the far greater number who have accessibility needs.
+			</p>
+		</section>
+		<section class="main-section" id="animations">
+			<header>
+					Animations
+			</header>
+			<p>
+				There are three key advantages to CSS animations over traditional script-driven animation techniques:
+			</p>
+			<ol>
+				<li>
+					They're easy to use for simple animations; you can create them without even having to know JavaScript.
+				</li>
+				<li>
+					The animations run well, even under moderate system load. Simple animations can often perform poorly in JavaScript. The rendering engine can use frame-skipping and other techniques to keep the performance as smooth as possible.
+				</li>
+				<li>
+					Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
+				</li>
+			</ol>
+		</section>
+		<section class="main-section" id="Reference">
+			<header>
+					Reference
+			</header>
+			<ul>
+				<li>
+					All the documentation in this page is taken from <a href="">MDN</a>
+				</li>
+			</ul>
+		</section>
+
+	</main>
+</body>
+</html>

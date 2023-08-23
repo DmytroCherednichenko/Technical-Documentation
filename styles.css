@@ -1,0 +1,131 @@
+/*Browser styles removing*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+/*General  styling*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*logo*/
+
+#logo {
+	height: 70px;
+	width: 300px;
+	border-right: 1px solid black;
+	text-align: center;
+	padding-top: 15px;
+}
+
+#logo h1 {
+	font-weight: normal;
+	font-size: 29px;
+}
+
+/*sidebar*/
+nav {
+	top: 0;
+	bottom: 0;
+	width:300px;
+	position: fixed;
+	border-right: 1px solid black;
+}
+
+nav ul {
+	height: calc(100% - 70px);
+	overflow: scroll; 
+}
+
+nav ul li {
+	border-top: 1px solid black;
+}
+
+nav li a {
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 44px;
+	padding-left: 33px;
+	display: block;
+	color: #4D4E53;
+}
+
+/*main*/
+
+main {
+	width: calc(100% - 300px);
+	float: right;
+	padding: 40px;
+	line-height: 22px;
+}
+
+main header {
+	font-weight: normal;
+	font-size: 29px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 7px;
+}
+
+main p {
+	color: #4D4E53;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+main header:first-of-type {
+	margin-top: 0;
+}
+
+main ul, main ol {
+	padding-left: 70px;
+}
+
+main ul li, main ol li {
+	color: #4D4E53;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 15px;
+}
+
+main code {
+	display: block;
+	background-color: whitesmoke;
+	padding: 15px;
+	font-family: monospace;
+	margin-left: 20px;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+	#logo {
+		position: static;
+		width: 100%;
+		border-right: 0;
+	}
+
+	nav {
+		position: static;
+		width: 100%;
+		height: 290px;
+		border: 1px solid black;
+		border-bottom: 2px solid black;
+	}
+
+	main {
+		position: static;
+		top: 280px;
+		width: 100%;
+	}
+}
+
+

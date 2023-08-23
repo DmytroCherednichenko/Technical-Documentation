@@ -52,12 +52,12 @@
 			<p>
 				In the Introduction to HTML module, we covered what HTML is and how it is used to mark up documents. These documents will be readable in a web browser. Headings will look larger than regular text, paragraphs break onto a new line and have space between them. Links are colored and underlined to distinguish them from the rest of the text. What you are seeing are the browser's default styles — very basic styles — that the browser applies to HTML to make sure that the page will be basically readable even if no explicit styling is specified by the author of the page.
 			</p>
-			<code>
-				h1 {
-  					color: red;
-  					font-size: 5em;
-					}
-			</code>
+			<pre><code  class="prettyprint">
+<!--			 -->h1 {
+<!--			 -->  color: red;
+<!--			 -->  font-size: 5em;
+<!--			 -->}
+				</code></pre>
 			<ul>
 				<li>
 					In the above example, the CSS rule opens with a selector. This selects the HTML element that we are going to style. In this case, we are styling level one headings (h1).
@@ -87,9 +87,9 @@
 			<p>
 				To link styles.css to index.html, add the following line somewhere inside the <head> of the HTML document:
 			</p>
-			<code>
-				<link rel="stylesheet" href="styles.css" />
-			</code>
+			<pre><code  class="prettyprint">
+<!--			 -->&ltlink rel="stylesheet" href="styles.css" /&gt
+			</code></pre>
 		</section>
 		<section class="main-section" id="how_css_is_structured">
 			<header>
@@ -98,16 +98,16 @@
 			<p>
 				A selector targets HTML to apply styles to content. We have already discovered a variety of selectors in the Getting started with CSS tutorial. If CSS is not applying to content as expected, your selector may not match the way you think it should match.
 			</p>
-			<code>
-				h1
-				a:link
-				.manythings
-				#onething
-				*
-				.box p
-				.box p:first-child
-				h1, h2, .intro
-			</code>
+			<pre><code class="prettyprint">
+<!--			 -->h1
+<!--			 -->a:link
+<!--			 -->.manythings
+<!--			 -->#onething
+<!--			 -->*
+<!--			 -->.box p
+<!--			 -->.box p:first-child
+<!--			 -->h1, h2, .intro
+				</code></pre>
 			<p>
 				Try creating some CSS rules that use the selectors above. Add HTML to be styled by the selectors. If any of the syntax above is not familiar, try searching MDN.
 			</p>
@@ -148,23 +148,23 @@
 			</p>
 			<p>
 				A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.
-				<code>
-					h1 {
-					  color: blue;
-					}
-
-					.special {
-					  color: blue;
-					}
-				</code>
+			<pre><code class="prettyprint">
+<!--			 -->h1 {
+<!--			 -->  color: blue;
+<!--			 -->}
+<!--			 -->
+<!--			 -->.special {
+<!--			 -->  color: blue;
+<!--			 -->}
+				</code></pre>
 			</p>
 			<p>
 				I could also combine these into a selector list, by adding a comma between them.
-				<code>
-					h1, .special {
-						  color: blue;
-						}
-				</code>
+			<pre><code class="prettyprint">
+<!--			 -->h1, .special {
+<!--			 -->  color: blue;
+<!--			 -->}
+				</code></pre>
 			</p>
 		</section>
 		<section class="main-section" id="the_box_model">
@@ -184,28 +184,28 @@
 			</header>
 			<p>
 				The color property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property.
-				<code>
-					p {
-					  color: red;
-					}
-				</code>
+			<pre><code class="prettyprint">
+<!--			 -->p {
+<!--			 -->  color: red;
+<!--			 -->}
+				</code></pre>
 				This will cause the paragraphs to become red, rather than the standard browser default of black, like so:
 			</p>
 			<p>
 				To set a different font for your text, you use the font-family property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. A simple example looks like so:
-				<code>
-					p {
-					  font-family: Arial;
-					}
-				</code>	
+			<pre><code class="prettyprint">
+<!--			 -->p {
+<!--			 -->  font-family: Arial;
+<!--			 -->}
+				</code></pre>
 			</p>
 			<p>
 				Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This involves a font-family value consisting of multiple font names separated by commas, e.g.,
-				<code>
-					p {
- 					 font-family: "Trebuchet MS", Verdana, sans-serif;
-					}
-				</code>
+			<pre><code class="prettyprint">
+<!--			 -->p {
+<!--			 --> font-family: "Trebuchet MS", Verdana, sans-serif;
+<!--			 -->}
+				</code></pre>
 			</p>
 		</section>
 		<section  class="main-section" id="css_layout_overview">
@@ -284,5 +284,6 @@
 		</section>
 
 	</main>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>

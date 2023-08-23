@@ -95,15 +95,18 @@ main ul li, main ol li {
 	font-size: 15px;
 }
 
-main code {
+.prettyprint {
 	display: block;
 	background-color: whitesmoke;
 	padding: 15px;
-	font-family: monospace;
 	margin-left: 20px;
 	border-radius: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+.prettyprint span {
+	font-family: monospace;
 }
 
 @media (max-width: 700px) {
